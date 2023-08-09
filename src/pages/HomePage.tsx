@@ -4,7 +4,7 @@ import { useDebounce } from '../hooks/debounce'
 import RepoCard from '../components/RepoCard'
 
 const HomePage = () => {
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState('hem1x')
     const [dropDown, setDropdown] = useState(false)
     const debounced = useDebounce(search)
     const {isLoading, isError, data} = useSearchUsersQuery(debounced, {
@@ -51,6 +51,7 @@ const HomePage = () => {
 
                 <div className="container">
                     { areReposLoading && <p className='text-center'>Repos are loading...</p> }
+                    { repos?.length === 0 && <p className='text-center'>No repos</p> }
                     { repos?.map(repo => <RepoCard repo={repo} key={repo.id}/>) }
                 </div>
             </div>
