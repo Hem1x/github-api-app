@@ -30,3 +30,7 @@ npm install
 ```
 npm start
 ```
+
+## Ссылка на проект
+
+https://github-api-app-xi.vercel.app/
